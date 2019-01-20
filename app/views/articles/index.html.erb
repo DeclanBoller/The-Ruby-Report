@@ -1,0 +1,9 @@
+<h1>All Articles</h1>
+<div class="preview-wrapper">
+  <% @articles.each do |article| %>
+  <div class="preview-container">
+  <%= image_tag article.thumbnail, :class => 'preview' %>
+  <h4><%= link_to article.headline, article %></h4>
+  </div>
+<% end %>
+</div>

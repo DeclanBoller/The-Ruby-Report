@@ -1,0 +1,30 @@
+<div class="article">
+  <h1 class="headline"><%= @article.headline %></h1>
+
+  <div class="hero-img">
+    <%= image_tag "https://www.fillmurray.com/600/300", :class => 'hero' %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias corporis, aliquam minima quisquam nihil. Veritatis nesciunt rerum tenetur quae corrupti!</p>
+  </div>
+
+  <main>
+    <div class="story-wrapper">
+      <div class="story">
+        <p><%= @article.story%></p>
+      </div>
+
+      <aside>
+        <div class="sup-img">
+          <%= image_tag "https://www.fillmurray.com/300/250", :class => 'supp' %>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, autem.</p>
+          <%= image_tag "https://www.fillmurray.com/300/350", :class => 'supp' %>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, ab?</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+</div>
+
+<div class="controls">
+  <%= link_to "Edit Article", edit_article_path(@article)%>
+  <%= link_to "Delete Article", @article, :method => 'delete'%>
+</div>

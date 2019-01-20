@@ -1,0 +1,27 @@
+<%= form_for @article do |f| %>
+  <%= f.label :headline %>
+  <%= f.text_field :headline, :autofocus => true, :required => true %>
+
+  <%= f.label :story %>
+  <%= f.text_area :story, :required => true %>
+
+  <%= f.label :sources %>
+  <%= f.text_field :sources %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author, :required => true %>
+
+  <%= f.label :exclusive %>
+  <%= f.check_box :exclusive %>
+
+  <%= f.label :category %>
+  <%= f.select :category_ids, Category.pluck(:category, :id), :multiple => true %>
+
+  <%= label_tag :image %>
+  <%= text_field_tag :image %>
+
+  <%= label_tag :caption %>
+  <%= text_field_tag :caption %>
+
+  <%= f.submit :class => 'submit-btn' %>
+  <% end %>

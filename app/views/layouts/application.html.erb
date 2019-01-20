@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NewsHub</title>
+    <title>The Ruby Report</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <div id="page-container">
+      <div id="content-wrap">
+        <header>
+          <%= image_tag("logo.jpg", :alt => 'logo', :class => 'logo') %>
+          <h1>The
+            <span id="titlecolor">Ruby</span>
+            Report</h1>
+          <nav>
+            <% if @current_user.present? %>
+              <% if @current_user.admin? %>
+                <%= link_to 'All Users', users_path %>
+              <% end %>
+              <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete' %>
+            <% else %>
+              <%= link_to 'Sign Up', new_user_path %>
+              |
+              <%= link_to 'Sign In', login_path %>
+            <% end %>
+          </nav>
+        </nav>
+      </header>
+      <%= yield %>
+    </div>
+    <footer>
+      <a href="#"> Privacy Policy </a>
+        <span class="divider"> | </span>
+      <a href="#"> Terms of Use </a>
+        <span class="divider"> | </span>
+      <a href="#"> Sitemaps </a>
+        <span class="divider"> | </span>
+      <a href="#"> Copyright </a>
+        <span class="divider"> | </span>
+      <a href="#"> Contact </a>
+    </footer>
+  </div>
+</body>
 </html>
