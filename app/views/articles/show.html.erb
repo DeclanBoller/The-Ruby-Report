@@ -1,15 +1,23 @@
 <div class="article">
   <h1 class="headline"><%= @article.headline %></h1>
 
+<% if @article.images.any? %>
   <div class="hero-img">
-    <%= image_tag "https://www.fillmurray.com/600/300", :class => 'hero' %>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias corporis, aliquam minima quisquam nihil. Veritatis nesciunt rerum tenetur quae corrupti!</p>
+    <%= image_tag @article.images.first.image, :class => 'hero' %>
+    <p><%= @article.images.first.caption %></p>
   </div>
-
+<% end %>
   <main>
     <div class="story-wrapper">
       <div class="story">
         <p><%= @article.story%></p>
+        <p><%= @article.author %></p>
+        <p><%= @article.created_at.strftime('%B %e, %Y') %></p>
+        <p>Likes: <%= @article.likes.where(liked: true).count %></p>
+        <p>Dislikes: <%= @article.likes.where(liked: false).count %></p>
+        <% @article.categories.each do |category| %>
+          <p><%= category.category %></p>
+        <% end %>
       </div>
 
       <aside>

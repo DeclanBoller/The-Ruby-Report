@@ -1,13 +1,14 @@
 User.destroy_all
 u1 = User.create :name => "Wee Man", :email => "weeman@ga.co", :password => "chicken"
-u2 = User.create :name => "Johnny Knoxville", :email => "welcometojackass@ga.co", :password => "chicken", :admin => true
+u2 = User.create :name => "Johnny Knoxville", :email => "welcometojackass@ga.co", :password => "chicken"
+u3 = User.create :name => "Admin", :email => "admin@admin.co", :password => "chicken"
 
 Category.destroy_all
-c1 = Category.create :category => "Breaking", :importance => 1
-c2 = Category.create :category => "National", :importance => 2
-c3 = Category.create :category => "International", :importance => 2
-c4 = Category.create :category => "Politics", :importance => 2
-c5 = Category.create :category => "Sports", :importance => 2
+c1 = Category.create :category => "Breaking"
+c2 = Category.create :category => "National"
+c3 = Category.create :category => "International"
+c4 = Category.create :category => "Politics"
+c5 = Category.create :category => "Sports"
 
 Article.destroy_all
 a1 = Article.create :headline => "Two arrested after gun found in car at Sydney Airport", :story => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", :sources => "", :author => "9 News Team", :exclusive => false
@@ -35,10 +36,12 @@ Like.destroy_all
 l1 = Like.create :liked => true
 l2 = Like.create :liked => true
 l3 = Like.create :liked => true
+l4 = Like.create :liked => false
+l5 = Like.create :liked => false
 
 # Associations - Categories to Articles
-a1.categories << c1 << c2
-a2.categories << c3 << c4
+a1.categories << c1 << c4
+a2.categories << c3
 a3.categories << c4
 a4.categories << c2
 a5.categories << c1
@@ -46,12 +49,13 @@ a5.categories << c1
 # Images to Articles
 a1.images << m4
 a2.images << m2
-a3.images << m5
+a3.images << m1
 a4.images << m3
 a5.images << m5
 
 # Likes to Articles
-a1.likes << l1 << l3
+a1.likes << l1 << l2 << l3 << l4 << l5
 u1.likes << l1
+u2.likes << l5
 
 #Article.first.likes

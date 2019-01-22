@@ -20,13 +20,8 @@
             Report</h1>
           <nav>
             <% if @current_user.present? %>
-              <% if @current_user.admin? %>
-                <%= link_to 'All Users', users_path %>
-              <% end %>
               <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete' %>
             <% else %>
-              <%= link_to 'Sign Up', new_user_path %>
-              |
               <%= link_to 'Sign In', login_path %>
             <% end %>
           </nav>

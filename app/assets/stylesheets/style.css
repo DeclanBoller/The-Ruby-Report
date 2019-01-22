@@ -230,3 +230,165 @@ footer {
   background: rgba(255, 46, 0, 0.65);
   color: #eee;
 }
+
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper input {
+}
+
+.sign-up, .login {
+  margin: 25px;
+  width: 50%;
+}
+
+.form-wrapper h4 {
+  margin-bottom: 25px;
+}
+
+span#break {
+  display: block;
+  background: black;
+  height: 200px;
+  width: 5px;
+}
+
+.hero-articles {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  width: 100%;
+  height: 300px;
+}
+
+.hero-articles .featured, .top-article {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.hero-articles .featured:first-child {
+  margin-right: 5px;
+}
+
+.featured .featured-image, .top-article .featured-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.featured .featured-image img, .top-article .featured-image img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%
+}
+
+.featured .featured-title, .top-article .recent-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  text-transform: capitalize;
+  text-align-last: center;
+}
+
+.top-article .recent-title h4 {
+  font-size: 12px;
+}
+
+.recent-posts {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.recent-posts .top, .bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50%;
+}
+
+.recent-posts .bottom {
+  margin-top: 5px;
+}
+
+.top-article {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.top-article:first-child {
+  margin-right: 5px;
+}
+
+.additional-content {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 10px 0;
+  background: var(--sub-color);
+  width: 100%;
+  height: 400px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 75%;
+}
+
+.left-side-top {
+  height: 50%;
+  width: 100%;
+}
+
+.left-side-bottom {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  width: 100%;
+}
+
+.left-side-bottom .advertisment {
+  background: #e0e0e0;
+  width: 50%;
+  height: 100%;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.right-side .title {
+  background: black;
+  height: 40px;
+}
+
+.right-side .exclusive {
+  border-bottom: 1px solid red;
+  height: 20%;
+}

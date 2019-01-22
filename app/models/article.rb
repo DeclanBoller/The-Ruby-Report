@@ -13,15 +13,15 @@
 #
 
 class Article < ApplicationRecord
-  has_many :likes
-  has_many :images
+  has_many :likes, :dependent => :destroy
+  has_many :images, :dependent => :destroy
   has_and_belongs_to_many :categories
 
   def thumbnail
     if images.any?
       images.first.image
     else
-      "https://www.fillmurray.com/400/400"
+      'https://picsum.photos/g/200/200'
   end
 end
 end

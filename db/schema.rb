@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_01_18_232851) do
     t.text "sources"
     t.text "author"
     t.boolean "exclusive"
-    t.text "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_01_18_232851) do
 
   create_table "categories", force: :cascade do |t|
     t.text "category"
-    t.integer "importance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

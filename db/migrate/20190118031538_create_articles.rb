@@ -6,7 +6,6 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.text :sources
       t.text :author
       t.boolean :exclusive
-      t.text :image_id
 
       t.timestamps
     end

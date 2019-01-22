@@ -1,15 +1,51 @@
-<h1>Sign In</h1>
+<div class="form-wrapper">
+<div class="sign-up">
+  <h4>Sign Up</h4>
 
+  <div class="error">
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <p>Sorry! The <%= msg %></p>
+      <% end %>
+    </ul>
+  <% end %>
+  </div>
+
+  <%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, :required => true %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, :required => true %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :required => true %>
+
+    <%= recaptcha_tags %>
+
+    <%= f.submit "Sign Up!" %>
+  <% end %>
+</div>
+
+<span id="break"></span>
+
+<div class="login">
+  <h4>Sign In</h4>
 <% if flash[:error_message].present? %>
   <p><%= flash[:error_message] %></p>
 <% end %>
 
-<%= form_tag login_path do %>
+<%= form_tag login_path, :class => 'sign-in' do %>
   <%= label_tag :email %>
   <%= email_field_tag :email %>
 
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-
   <%= submit_tag "Sign In" %>
+</div>
 <% end %>
+</div>

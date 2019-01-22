@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: duilfnufx
+  api_key: '465624289131876'
+  api_secret: JWDJ-KtrZbSiQWwJRyWkP_kyqzg
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: duilfnufx
+  api_key: '465624289131876'
+  api_secret: JWDJ-KtrZbSiQWwJRyWkP_kyqzg
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: duilfnufx
+  api_key: '465624289131876'
+  api_secret: JWDJ-KtrZbSiQWwJRyWkP_kyqzg
+  enhance_image_tag: true
+  static_file_support: false

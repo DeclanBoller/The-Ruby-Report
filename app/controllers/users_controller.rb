@@ -10,11 +10,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    if @user.save
+    if verify_recaptcha(model: @user) && @user.save
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render :new
+      render "session/new"
     end
   end
 

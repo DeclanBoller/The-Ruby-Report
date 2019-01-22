@@ -1,1 +1,76 @@
-<h1>GA Newshub Homepage</h1>
+<div class="hero-articles">
+  <div class="featured">
+    <div class="featured-image">
+      <%= image_tag @breaking_article.images.first.image %>
+    </div>
+    <div class="featured-title">
+      <h4><%= @breaking_article.headline %></h4>
+    </div>
+  </div>
+  <div class="recent-posts">
+    <div class="top">
+      <div class="top-article">
+        <div class="featured-image">
+        <%=  image_tag @articles[0].images.first.image %>
+        </div>
+        <div class="recent-title">
+          <h4><%= @articles[0].headline %></h4>
+        </div>
+      </div>
+      <div class="top-article">
+        <div class="featured-image">
+          <%= image_tag @articles[1].images.first.image %>
+        </div>
+        <div class="recent-title">
+          <h4><%= @articles[1].headline %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="top-article">
+        <div class="featured-image">
+          <%= image_tag @articles[2].images.first.image %>
+        </div>
+        <div class="recent-title">
+          <h4><%= @articles[2].headline %></h4>
+        </div>
+      </div>
+      <div class="top-article">
+        <div class="featured-image">
+          <%= image_tag @articles[3].images.first.image %>
+        </div>
+        <div class="recent-title">
+        <h4>  <%= @articles[3].headline %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="additional-content">
+  <div class="left-side">
+    <div class="left-side-top">
+      <div class="weather-api"></div>
+    </div>
+    <div class="left-side-bottom">
+      <div class="advertisment"></div>
+      <div class="social-media"></div>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="title"></div>
+    <div class="exclusive article-1">
+      <h4><%= @exclusives[0].headline %></h4>
+    </div>
+    <div class="exclusive article-2">
+      <h4><%= @exclusives[1].headline %></h4>
+    </div>
+    <div class="exclusive article-3">
+      <h4><%= @exclusives[2].headline %></h4>
+    </div>
+    <div class="exclusive article-4">
+      <h4><%= @exclusives[3].headline unless !@exclusives[3].present? %></h4>
+    </div>
+    <div class="exclusive article-5"></div>
+  </div>
+</div>
