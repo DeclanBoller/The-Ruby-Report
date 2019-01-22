@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Lato:300|Montserrat|Oswald:600|Roboto+Condensed'); */
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Montserrat|Oswald:600|Roboto+Condensed');
 
 :root {
   --title: 'Oswald', sans-serif;
@@ -141,7 +141,7 @@ footer {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  max-height: 500px
+  max-height: 500px; 
   max-width: 500px;
   margin: 0 auto;
 }
@@ -244,8 +244,7 @@ footer {
   flex-direction: column;
 }
 
-.form-wrapper input {
-}
+.form-wrapper input {}
 
 .sign-up, .login {
   margin: 25px;
