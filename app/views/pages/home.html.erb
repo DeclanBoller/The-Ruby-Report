@@ -60,13 +60,13 @@
   <div class="right-side">
     <div class="title"></div>
     <div class="exclusive article-1">
-      <h4><%= @exclusives[0].headline %></h4>
+      <h4><%= @exclusives[0].headline unless !@exclusives[0].present?%></h4>
     </div>
     <div class="exclusive article-2">
-      <h4><%= @exclusives[1].headline %></h4>
+      <h4><%= @exclusives[1].headline unless !@exclusives[1].present?%></h4>
     </div>
     <div class="exclusive article-3">
-      <h4><%= @exclusives[2].headline %></h4>
+      <h4><%= @exclusives[2].headline unless !@exclusives[2].present?%></h4>
     </div>
     <div class="exclusive article-4">
       <h4><%= @exclusives[3].headline unless !@exclusives[3].present? %></h4>
