@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: duilfnufx
-  api_key: '465624289131876'
-  api_secret: JWDJ-KtrZbSiQWwJRyWkP_kyqzg
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
-  static_file_support: false
+  static_image_support: false
 production:
-  cloud_name: duilfnufx
-  api_key: '465624289131876'
-  api_secret: JWDJ-KtrZbSiQWwJRyWkP_kyqzg
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
-  static_file_support: true
+  static_image_support: true
 test:
-  cloud_name: duilfnufx
-  api_key: '465624289131876'
-  api_secret: JWDJ-KtrZbSiQWwJRyWkP_kyqzg
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
-  static_file_support: false
+  static_image_support: false
