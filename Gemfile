@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary'
+gem 'httparty'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

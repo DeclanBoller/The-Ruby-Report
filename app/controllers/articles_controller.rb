@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :check_for_admin
+  before_action :check_for_admin, :only => [:edit, :index, :new]
 
   def index
     @articles = Article.all

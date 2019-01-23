@@ -32,7 +32,10 @@
   </main>
 </div>
 
+
+<% if @current_user.present? && @current_user.admin? %>
 <div class="controls">
   <%= link_to "Edit Article", edit_article_path(@article)%>
   <%= link_to "Delete Article", @article, :method => 'delete'%>
 </div>
+<% end %>
