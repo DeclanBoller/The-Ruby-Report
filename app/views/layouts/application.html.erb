@@ -34,6 +34,8 @@
         <% end %>
         <% if @current_user.present? && @current_user.admin? %>
           <%= link_to "New Article", new_article_path, :class => "create-art" %>
+          <%= link_to "All Articles", articles_path, :class => "create-art" %>
+
         <% end %>
       </div>
       <div class="add-margin">

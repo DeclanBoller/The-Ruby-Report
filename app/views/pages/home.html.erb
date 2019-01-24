@@ -57,9 +57,16 @@
     </div>
 
     <div class="left-side-bottom">
+      <% if !@current_user.present?  %>
       <div class="advertisment">
-        <%= image_tag "ad.png" %>
+        <%= image_tag "ad.png", :alt => 'Advertisment' %>
       </div>
+      <% else %>
+      <div class="advertisment-dp">
+        <!-- OBVIOUSLY A PLACEHOLDER FOR OTHER CONTENT -->
+        <%= image_tag "deadpool.jpg", :alt => 'Whose kitty litter did I just shit in?' %>
+      </div>
+      <% end %>
       <div class="social-media">
         <div class="sm-title">
           <h2>Follow Us</h2>
@@ -77,6 +84,11 @@
   </div>
 
   <div class="right-side">
+    <% if !@current_user.present? %>
+    <div class="cover">
+      <h3>This content is for members only. <br> Sign up or Sign in to view it!</h3>
+    </div>
+    <% end %>
     <div class="title">
       <h3>Exclusive Content</h3>
     </div>
