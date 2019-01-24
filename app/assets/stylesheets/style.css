@@ -245,11 +245,17 @@ footer a:hover {
   margin: 0 auto;
 }
 
+.hero-img img {
+  max-height: 400px;
+  margin-bottom: 20px;
+}
+
 .hero-img p {
   text-align: center;
   font-style: italic;
   font-family: var(--subtitle);
   font-size: 12px;
+  margin-bottom: 50px;
 }
 
 .story-wrapper {
@@ -751,11 +757,11 @@ p.error-msg{
   background: var(--primary-color);
   color: var(--secondary-color);
   font-family: var(--subtitle);
-  height: 40px;
+  height: 45px;
   letter-spacing: 1px;
 }
 
-.right-side .exclusive {
+.right-side .exclusive-art {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -765,7 +771,7 @@ p.error-msg{
   border: 2px solid var(--sub-color);
 }
 
-.exclusive:last-child {
+.exclusive-art:last-child {
   margin-bottom: 0;
 }
 

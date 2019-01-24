@@ -93,11 +93,9 @@
       <h3>Exclusive Content</h3>
     </div>
     <% @exclusives.each do |exclusive| %>
-    <% if @current_user.present? %>
-      <div class="exclusive">
+      <div class="exclusive-art">
         <h4><%= link_to exclusive.headline, article_path(exclusive) unless !exclusive.present? %></h4>
       </div>
-      <% end %>
     <% end %>
   </div>
 </div>
