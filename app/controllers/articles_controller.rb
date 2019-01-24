@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     category = Category.create :category => params[:category]
 
     article.images << image
-    article.categories << category
+    article.categories << category if category.valid?
 
     article.update article_params
 
@@ -59,6 +59,6 @@ class ArticlesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:category, :importance)
+    params.require(:category).permit(:category)
   end
 end

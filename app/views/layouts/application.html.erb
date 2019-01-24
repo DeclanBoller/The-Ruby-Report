@@ -10,23 +10,32 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= "#{params[:controller]}-#{params[:action]}" %>">
     <div id="page-container">
       <div id="content-wrap">
         <header>
-          <%= image_tag("logo.jpg", :alt => 'logo', :class => 'logo') %>
+          <%= link_to image_tag("logo.jpg", :alt => 'logo', :class => 'logo'), root_path %>
           <h1>The
             <span id="titlecolor">Ruby</span>
             Report</h1>
           <nav>
             <% if @current_user.present? %>
-              <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete' %>
+              <%= link_to "Sign Out", login_path, :method => 'delete' %>
             <% else %>
               <%= link_to 'Sign In', login_path %>
             <% end %>
           </nav>
         </nav>
       </header>
+      <div class="user-nav">
+        <%= link_to "Home", root_path %>
+        <% @categories.each do |category| %>
+        <%= link_to category.category, "/categories/#{category.category}" %>
+        <% end %>
+        <% if @current_user.present? && @current_user.admin? %>
+          <%= link_to "New Article", new_article_path, :class => "create-art" %>
+        <% end %>
+      </div>
       <div class="add-margin">
       <%= yield %>
       </div>

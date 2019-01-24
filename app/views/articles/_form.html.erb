@@ -1,21 +1,25 @@
+<div class="form-wrapper-article">
 <%= form_for @article do |f| %>
+<div class="article-left-side">
   <%= f.label :headline %>
   <%= f.text_field :headline, :autofocus => true, :required => true %>
 
   <%= f.label :story %>
   <%= f.text_area :story, :required => true %>
-
+</div>
+<div class="article-right-side">
   <%= f.label :sources %>
   <%= f.text_field :sources %>
 
   <%= f.label :author %>
   <%= f.text_field :author, :required => true %>
 
+<div class="exclusive">
   <%= f.label :exclusive %>
   <%= f.check_box :exclusive %>
-
+</div>
   <%= f.label :category %>
-  <%= f.select :category_ids, Category.pluck(:category, :id), :multiple => true %>
+  <%= f.select :category_ids, Category.pluck(:category, :id) %>
 
   <%= label_tag :image %>
   <%= text_field_tag :image %>
@@ -23,5 +27,7 @@
   <%= label_tag :caption %>
   <%= text_field_tag :caption %>
 
-  <%= f.submit :class => 'submit-btn' %>
+  <%= f.submit :class => 'submit' %>
+  </div>
   <% end %>
+</div>

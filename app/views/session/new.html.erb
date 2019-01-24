@@ -1,14 +1,12 @@
 <div class="form-wrapper">
 <div class="sign-up">
-  <h4>Sign Up</h4>
+  <h4>First time? <span class="login">Sign Up</span> Now!</h4>
 
   <div class="error">
   <% if @user.errors.any? %>
-    <ul>
       <% @user.errors.full_messages.each do |msg| %>
-      <p>Sorry! The <%= msg %></p>
+      <p class="error-msg">Sorry! The <%= msg %></p>
       <% end %>
-    </ul>
   <% end %>
   </div>
 
@@ -27,16 +25,16 @@
 
     <%= recaptcha_tags %>
 
-    <%= f.submit "Sign Up!" %>
+    <%= f.submit "Sign Up!", :class => "submit-btn" %>
   <% end %>
 </div>
 
 <span id="break"></span>
 
 <div class="login">
-  <h4>Sign In</h4>
+  <h4>Returning user? <span class="login">Sign In</span> now!</h4>
 <% if flash[:error_message].present? %>
-  <p><%= flash[:error_message] %></p>
+  <p class="error-msg"><%= flash[:error_message] %></p>
 <% end %>
 
 <%= form_tag login_path, :class => 'sign-in' do %>
@@ -45,7 +43,7 @@
 
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-  <%= submit_tag "Sign In" %>
+  <%= submit_tag "Sign In", :class => "submit-btn" %>
 </div>
 <% end %>
 </div>

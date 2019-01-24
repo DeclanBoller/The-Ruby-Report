@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :articles
   resources :images
   resources :users
-  resources :categories
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+  get '/categories/:category' => 'categories#show'
 end

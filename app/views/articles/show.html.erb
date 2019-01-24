@@ -10,28 +10,22 @@
   <main>
     <div class="story-wrapper">
       <div class="story">
-        <p><%= @article.story%></p>
-        <p><%= @article.author %></p>
-        <p><%= @article.created_at.strftime('%B %e, %Y') %></p>
-        <p>Likes: <%= @article.likes.where(liked: true).count %></p>
-        <p>Dislikes: <%= @article.likes.where(liked: false).count %></p>
-        <% @article.categories.each do |category| %>
-          <p><%= category.category %></p>
-        <% end %>
-      </div>
-
-      <aside>
-        <div class="sup-img">
-          <%= image_tag "https://www.fillmurray.com/300/250", :class => 'supp' %>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, autem.</p>
-          <%= image_tag "https://www.fillmurray.com/300/350", :class => 'supp' %>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, ab?</p>
+        <div class="article-info">
+          <h4><%= @article.author %></h4>
+          <h4><%= @article.created_at.strftime('%B %e, %Y') %></h4>
+          <% @article.categories.each do |category| %>
+            <h4 class="cat-tag"><%= category.category %></h4>
+          <% end %>
         </div>
-      </aside>
+        <p><%= @article.story%></p>
+      </div>
     </div>
   </main>
 </div>
-
+<div class="rating">
+  <h4><i class="far fa-thumbs-up"></i> <%= @article.likes.where(liked: true).count %></h4>
+  <h4><i class="far fa-thumbs-down"></i> <%= @article.likes.where(liked: false).count %></h4>
+</div>
 
 <% if @current_user.present? && @current_user.admin? %>
 <div class="controls">

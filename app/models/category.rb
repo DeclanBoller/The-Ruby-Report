@@ -10,5 +10,6 @@
 #
 
 class Category < ApplicationRecord
+  validates :category, :presence => true
   has_and_belongs_to_many :articles #find join table between categories and articles
 end

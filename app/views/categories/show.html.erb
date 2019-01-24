@@ -1,0 +1,10 @@
+<h1><%= @article.category %> News</h1>
+
+<div class="preview-wrapper">
+  <% @article.articles.each do |a| %>
+  <div class="preview-container">
+    <%= image_tag a.thumbnail, :class => 'preview' %>
+    <h4><%= link_to a.headline, article_path(a) %></h4>
+  </div>
+<% end %>
+</div>

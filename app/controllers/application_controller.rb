@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
-  before_action :fetch_user
+  before_action :fetch_user, :index_categories
+
+  def index_categories
+    @categories = Category.all
+  end
 
   private
   def fetch_user

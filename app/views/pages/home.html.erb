@@ -7,66 +7,55 @@
       <h4><%= link_to @breaking_article.headline, article_path(@breaking_article) %></h4>
     </div>
   </div>
+
   <div class="recent-posts">
-    <div class="top">
-      <div class="top-article">
-        <div class="featured-image">
-          <%= image_tag @articles[0].images.first.image %>
-        </div>
-        <div class="recent-title">
-          <h4><%= link_to @articles[0].headline, article_path(@articles[0]) %></h4>
-        </div>
-      </div>
-      <div class="top-article">
-        <div class="featured-image">
-          <%= image_tag @articles[1].images.first.image %>
-        </div>
-        <div class="recent-title">
-          <h4><%= link_to @articles[1].headline, article_path(@articles[1]) %></h4>
-        </div>
-      </div>
-    </div>
-    <div class="bottom">
-      <div class="top-article">
-        <div class="featured-image">
-          <%= image_tag @articles[2].images.first.image %>
-        </div>
-        <div class="recent-title">
-          <h4><%= link_to @articles[2].headline, article_path(@articles[2]) %></h4>
-        </div>
-      </div>
-      <div class="top-article">
-        <div class="featured-image">
-          <%= image_tag @articles[3].images.first.image %>
-        </div>
-        <div class="recent-title">
-          <h4>
-            <%= link_to @articles[3].headline, article_path(@articles[3]) %></h4>
-        </div>
-      </div>
-    </div>
-  </div>
+    <% @articles.in_groups_of(2).each do |article| %>
+   <div class="top">
+     <div class="top-article">
+       <div class="featured-image">
+         <%= image_tag article[0].images.first.image unless !article[0].present? %>
+       </div>
+       <div class="recent-title">
+         <h4><%= link_to article[0].headline, article_path(article[0]) unless !article[0].present?%></h4>
+       </div>
+     </div>
+     <div class="top-article">
+       <div class="featured-image">
+         <%= image_tag article[1].images.first.image unless !article[1].present? %>
+       </div>
+       <div class="recent-title">
+         <h4><%= link_to article[1].headline, article_path(article[1]) unless !article[1].present?%></h4>
+       </div>
+     </div>
+   </div>
+   <% end %>
+ </div>
 </div>
 
 <div class="additional-content">
   <div class="left-side">
     <div class="left-side-top">
 
-        <% 0.step(39, 8).each do |n| %>
+      <% 0.step(39, 8).each do |n| %>
 
-          <div class="daily-weather">
-            <h3>
-              <span class="day"><%= @info["list"][ n ]["dt_txt"].to_datetime().strftime('%a') %></span>
-              <br>
-              <%= @info["list"][ n ]["dt_txt"].to_datetime().strftime('%d %b') %>
-            </h3>
-            <%= image_tag "http://openweathermap.org/img/w/#{@info["list"][ n ]["weather"][0]["icon"]}.png" %>
-            <h4 class="temp"><%= @info["list"][ n ]["main"]["temp_max"].floor %>℃ </h4>
-            <h4 class="info"><%= @info["list"][ n ]["weather"][0]["description"] %></h4>
-          </div>
+        <div class="daily-weather">
+          <h3>
+            <span class="day"><%= @info["list"][ n ]["dt_txt"].to_datetime().strftime('%a') %></span>
+            <br>
+            <%= @info["list"][ n ]["dt_txt"].to_datetime().strftime('%d %b') %>
+          </h3>
+          <%= image_tag "http://openweathermap.org/img/w/#{@info["list"][ n ]["weather"][0]["icon"]}.png" %>
+          <h4 class="temp">
+            <%= @info["list"][ n ]["main"]["temp_max"].floor %>℃
+          </h4>
+          <h4 class="info">
+            <%= @info["list"][ n ]["weather"][0]["description"] %>
+          </h4>
+        </div>
 
-        <% end %>
+      <% end %>
     </div>
+
     <div class="left-side-bottom">
       <div class="advertisment">
         <%= image_tag "ad.png" %>
@@ -86,14 +75,17 @@
       </div>
     </div>
   </div>
+
   <div class="right-side">
     <div class="title">
       <h3>Exclusive Content</h3>
     </div>
-    <% 0.step(4).each do |n| %>
-    <div class="exclusive">
-      <h4><%= link_to @exclusives[ n ].headline, article_path(@exclusives[n]) unless !@exclusives[ n ].present?%></h4>
-    </div>
+    <% @exclusives.each do |exclusive| %>
+    <% if @current_user.present? %>
+      <div class="exclusive">
+        <h4><%= link_to exclusive.headline, article_path(exclusive) unless !exclusive.present? %></h4>
+      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
