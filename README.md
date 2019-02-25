@@ -9,7 +9,7 @@ I have created a notional client, 'NewsHub' who have requested I build a news ap
 At this time the company only requires it to be available for desktops, however the company plans to introduce mobile responsiveness.
 
 ## Deployment -
-The proof of concept of this application is available online here:
+The live version of this application is available online here:
 * [Heroku - 'The Ruby Report'](https://newshub-au.herokuapp.com/)
 
 ## Prerequisites -
@@ -34,6 +34,7 @@ rails server
 ## Known Issues -
 * Currently articles marked as exclusive still show up in the Category view.
 * Article hero image does not update, this is because the initial plan was the allow articles to have many images, and the code has not been amended due to time constraints.
+* Not as much an issue (Lets call it a feature) - If your browser has an active ad blocker, it will block the images near the SM Icons as they are placeholder advertisments.
 
 ## License and Usage -
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/DeclanBoller/project-1/blob/master/LICENSE) file for details.
